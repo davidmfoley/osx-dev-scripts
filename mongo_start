@@ -1,2 +1,6 @@
+#! /bin/bash
+DEFAULT_VERBOSITY=-vvvvvvvv
+VERBOSITY=${1:-$DEFAULT_VERBOSITY}
+echo $VERBOSITY
 DIR="$( cd "$( dirname "$0" )" && pwd )"
-mongod run --config $DIR/mongod.conf -vvvvvvvv
+mongod run --config $DIR/mongod.conf $VERBOSITY
