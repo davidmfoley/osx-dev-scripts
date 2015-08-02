@@ -1,0 +1,15 @@
+DIR=$1
+[ -z "$DIR" ] && DIR=`pwd`
+
+pushd $DIR
+for d in `ls -d */`
+do
+  echo "$d"
+  echo
+  pushd "$d" > /dev/null
+  git status
+  popd > /dev/null
+  echo
+done
+popd
+
